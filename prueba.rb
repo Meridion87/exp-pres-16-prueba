@@ -53,14 +53,17 @@ def menu()
   when "1" #Obtener los promedios de los alumnos en archivos
 
       alumnos = al_to_hash(alumnos)
+      texto = ""
 
       alumnos.each do |k, arr|
         prom = arr.inject(0){|sum, x| sum + x.to_f}
         prom /= arr.length
-        file = File.open("#{k}", 'w')
-        file.puts "El promedio de notas de #{k} es: #{prom}"
-        file.close
+        texto += "El promedio de notas de #{k} es: #{prom}\n"
       end
+
+      file = File.open("promedios.txt", 'w')
+      file.puts texto
+      file.close
 
       puts
       puts "Archivos creados correctamente"
