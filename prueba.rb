@@ -106,7 +106,7 @@ def menu()
           puts
           puts "El valor indicado no está permitido"
           puts
-          menu()
+          #menu()
         end
       end
 
