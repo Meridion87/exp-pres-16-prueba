@@ -1,5 +1,3 @@
-require 'csv'
-
 
 def al_to_hash (h)
   file = File.open('notas.csv', 'r')
@@ -96,8 +94,6 @@ def menu()
       puts "Ingrese la nota necesaria para aprobar (opcional). Presione Enter para utilizar por defecto el valor 5"
       nota_apro = gets.chomp.to_s
 
-      #puts "nulo" if nota_apro == ""
-
       if nota_apro == ''
         puts
         obtiene_aprobados(alumnos, 5)
@@ -109,7 +105,6 @@ def menu()
           puts
           puts "El valor indicado no está permitido"
           puts
-          #menu()
         end
       end
 
